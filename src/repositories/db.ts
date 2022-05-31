@@ -12,8 +12,7 @@ export type postsType = {
     content:string
     bloggerId:number
 }
-
-const mongoUri = process.env.MongoURI || "mongodb://localhost:27017"
+const mongoUri = process.env.MongoURI || 'mongodb+srv://yuraovdnk:ovdey1970@cluster0.sbzbx.mongodb.net/?retryWrites=true&w=majority'
 const client = new MongoClient(mongoUri)
 const db = client.db('youtube')
 export const bloggerCollection = db.collection<bloggerType>("bloggers")
