@@ -21,7 +21,7 @@ export const postsService = {
             bloggerName: blogger.name
         }
 
-        const result = await postsRepository.createPost(newPost)
+        const result = await postsRepository.createPost({...newPost})
         if(result){
             return newPost
         }
