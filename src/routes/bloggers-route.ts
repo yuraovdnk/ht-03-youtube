@@ -11,7 +11,8 @@ import {postsValidate} from "../middleware/posts-validator";
 export const bloggersRoute = Router()
 
 bloggersRoute.get('/', async (req: Request, res: Response) => {
-    res.send(await bloggersService.getBloggers(req.query as paginateType))
+    const bloggers = await bloggersService.getBloggers(req.query as paginateType)
+    res.status(200).send(bloggers)
 })
 
 bloggersRoute.get('/:id', async (req: Request, res: Response) => {
