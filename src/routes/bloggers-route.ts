@@ -73,6 +73,7 @@ bloggersRoute.post('/:bloggerId/posts', checkAuth,postsValidate,async (req: Requ
     if (blogger) {
         const createdPost = await postsService.createPost(req.body, blogger)
         res.status(200).send(createdPost)
+        return
     }
     res.send(404)
 })
