@@ -40,7 +40,7 @@ postsRoute.post('/',checkAuth,postsValidate, async (req: Request, res: Response)
     const post = await postsService.createPost(req.body, blogger)
 
     if (!post) {
-        res.status(400)
+        res.status(400).send()
         return
     }
 
