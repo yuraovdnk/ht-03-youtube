@@ -15,7 +15,7 @@ export const bloggersService = {
             name: body.name,
             youtubeUrl: body.youtubeUrl
         }
-        await bloggersRepository.createBlogger(newBlogger)
+        await bloggersRepository.createBlogger({...newBlogger})
         return newBlogger
 
     },
